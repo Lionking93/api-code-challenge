@@ -4,6 +4,13 @@ jdk: oraclejdk8
 addons:
   apt:
     packages:
-      - oracle-java8-installer
+    - oracle-java8-installer
 before_install:
-  - chmod +x mvnw
+- chmod +x mvnw
+deploy:
+  provider: heroku
+  api_key:
+    secure: l3FmaleZliH0xiMmCBGjFDaeD/gd3f6eeHG7btA9T3+CbQvReGRdJqh93v0Ljrr8n5Y+STKv8YY6yK4LsUdlTResNMBZclnRhEogTOH1KgFY5GoZsIwoZMFKGxKzIxjSdnmlrfWKt1vko+3/FsRx+4oAafJGpJaDIvye0xEWokQPdHTTP0GkY2q1mQ/7h/Yx4oCSmeGQGi4DIcR/4SUrAjCIRkGQUtGh4mcvNxt2gd0oX5upi98hjTG0GXGut5Hkc5Xrmk61xMVSL9Er0gDoJBafwHDBueM3WcGcOn5xbeCCavKE8CUZxgrTzKsZsA5X+e48ywkGJhgeVg/BqFGtYE0ztmTLqgR3Pz2L43raB4pr3W8d3h3cYn+lfFVyX0afWG76WFjxLp/WkVWwxnECsgxSTBq2OK8jsU+VZhoIp4qhMTGFHfSr6wjx+n+Vpwy5O1pke6i6JQk1guWzfX+w2AyjnBA8vXh6gi5mXThEN68LTsh8HlRAJH4XsA3cXZHNTA7xnQo3GeV7hIdz38C2pxj0PXQzwQDBV7C6HZmqGEgxWL2jCG1hUcEJQX6rjiNhSu/ha+TuYZiXp0yHKscYFZab46wc/t5Q1KggnmmiCNp9WXdjdzlZzY91+CsRJHqFqqzL61wZT8voJgVd9fc/ua2VsUxlx3bGduEMR6Krc1Q=
+  app: leos-api-code-challenge
+  on:
+    repo: Lionking93/api-code-challenge
