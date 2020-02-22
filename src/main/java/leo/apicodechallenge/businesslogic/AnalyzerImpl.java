@@ -24,7 +24,19 @@ public class AnalyzerImpl implements Analyzer<AnalyzeRequest, AnalyzeResponse> {
     }
     
     public int getDataWordCount(String data) {
-        return 0;
+        if (data == null) {
+            return 0;
+        }
+        
+        String dataWithoutSpaces = data.trim();
+        
+        if (dataWithoutSpaces.length() == 0) {
+            return 0;
+        }
+        
+        String[] dataParts = dataWithoutSpaces.split("\\s+");
+        
+        return dataParts.length;
     }
 
     @Override
