@@ -10,7 +10,7 @@ To use the API you should send a POST request to URL https://leos-api-code-chall
 
 ```json
 {
-  "text":"hello 2 times  "
+  "text":"heipodei 1234"
 }
 ```
 
@@ -18,8 +18,8 @@ For this request, the API will return a following response:
 
 ```json
 {
-  "textLength":{"withSpaces":15,"withoutSpaces":11},
-  "wordCount":3,
-  "characterCount":[{"e":2},{"h":1},{"i":1},{"l":2},{"m":1},{"o":1},{"s":1},{"t":1}]
+  "textLength":{"withSpaces":13,"withoutSpaces":12},
+  "wordCount":2,
+  "characterCount":[{"d":1},{"e":2},{"h":1},{"i":2},{"o":1},{"p":1}]
 }
 ```
