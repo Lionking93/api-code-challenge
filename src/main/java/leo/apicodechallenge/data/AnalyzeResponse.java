@@ -6,7 +6,6 @@
 package leo.apicodechallenge.data;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +16,7 @@ import java.util.Map;
 public class AnalyzeResponse {
     private final TextLengths textLength = new TextLengths();
     private int wordCount;
-    private final List<Map> characterCount = new ArrayList<>();
+    private List<Map> characterCount = new ArrayList<>();
     
     public TextLengths getTextLength() {
         return this.textLength;
@@ -27,8 +26,16 @@ public class AnalyzeResponse {
         return this.wordCount;
     }
     
+    public void setWordCount(int wordCount) {
+        this.wordCount = wordCount;
+    }
+    
     public List<Map> getCharacterCount() {
         return this.characterCount;
+    }
+    
+    public void setCharacterCount(List<Map> characterCount) {
+        this.characterCount = characterCount;
     }
     
     public void setTextLengthWithSpaces(int textLengthWithSpaces) {
@@ -37,15 +44,5 @@ public class AnalyzeResponse {
         
     public void setTextLengthWithoutSpaces(int textLengthWithoutSpaces) {
         this.textLength.setWithoutSpaces(textLengthWithoutSpaces);
-    }
-
-    public void setWordCount(int wordCount) {
-        this.wordCount = wordCount;
-    }
-
-    public void addCharacterWithCount(String character, int count) {
-        Map<String, Integer> newCharCount = new HashMap<>();
-        newCharCount.put(character, count);
-        this.characterCount.add(newCharCount);
     }
 }

@@ -5,6 +5,7 @@
  */
 package leo.apicodechallenge.helpers;
 
+import leo.apicodechallenge.mappers.impl.DataCharacterCountFieldMapperImpl;
 import leo.apicodechallenge.mappers.impl.DataLengthWithSpacesFieldMapperImpl;
 import leo.apicodechallenge.mappers.impl.DataLengthWithoutSpacesFieldMapperImpl;
 import leo.apicodechallenge.mappers.impl.DataWordCountFieldMapperImpl;
@@ -33,6 +34,11 @@ public class RequestResponseMapperImplBuilder {
     
     public RequestResponseMapperImplBuilder addDataWordCountMapper() {
         this.mapper.getDataMappers().add(new DataWordCountFieldMapperImpl());
+        return this;
+    }
+    
+    public RequestResponseMapperImplBuilder addDataCharacterCountMapper() {
+        this.mapper.getDataMappers().add(new DataCharacterCountFieldMapperImpl());
         return this;
     }
     

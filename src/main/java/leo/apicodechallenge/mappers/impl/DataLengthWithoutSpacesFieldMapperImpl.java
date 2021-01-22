@@ -8,7 +8,6 @@ package leo.apicodechallenge.mappers.impl;
 import leo.apicodechallenge.data.AnalyzeResponse;
 import leo.apicodechallenge.mappers.RequestResponseMapper;
 import leo.apicodechallenge.data.AnalyzeRequest;
-import org.springframework.stereotype.Service;
 
 /**
  *

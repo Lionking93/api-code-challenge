@@ -60,6 +60,11 @@
                             </goals>
                         </execution>
                     </executions>
+                    <configuration>
+                        <excludes>
+                            <exclude>**/*Application.class</exclude>
+                        </excludes>
+                    </configuration>
                 </plugin>
         </plugins>
     </build>

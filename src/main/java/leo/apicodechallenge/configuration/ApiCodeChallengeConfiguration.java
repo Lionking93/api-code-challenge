@@ -22,6 +22,7 @@ public class ApiCodeChallengeConfiguration {
                 .addDataLengthWithSpacesMapper()
                 .addDataLengthWithoutSpacesMapper()
                 .addDataWordCountMapper()
+                .addDataCharacterCountMapper()
                 .build();
     }
 }
