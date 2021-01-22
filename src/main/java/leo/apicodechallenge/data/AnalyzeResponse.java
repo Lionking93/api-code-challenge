@@ -17,7 +17,7 @@ import java.util.Map;
 public class AnalyzeResponse {
     private final TextLengths textLength = new TextLengths();
     private int wordCount;
-    private List<Map> characterCount = new ArrayList<>();
+    private final List<Map> characterCount = new ArrayList<>();
     
     public TextLengths getTextLength() {
         return this.textLength;
@@ -30,7 +30,7 @@ public class AnalyzeResponse {
     public List<Map> getCharacterCount() {
         return this.characterCount;
     }
-          
+    
     public void setTextLengthWithSpaces(int textLengthWithSpaces) {
         this.textLength.setWithSpaces(textLengthWithSpaces);
     }

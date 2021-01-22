@@ -5,7 +5,6 @@
  */
 package leo.apicodechallenge.controller;
 
-import leo.apicodechallenge.businesslogic.Analyzer;
 import leo.apicodechallenge.data.AnalyzeRequest;
 import leo.apicodechallenge.data.AnalyzeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import leo.apicodechallenge.mappers.RequestResponseMapper;
 
 /**
  *
@@ -22,11 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiCodeChallengeController {
     
     @Autowired
-    private Analyzer<AnalyzeRequest, AnalyzeResponse> requestAnalyzer;
+    private RequestResponseMapper<AnalyzeRequest, AnalyzeResponse> requestAnalyzer;
     
     @RequestMapping(value="/analyze", method=RequestMethod.POST)
     public AnalyzeResponse analyzeText(@RequestBody AnalyzeRequest request) {
         System.out.println("Request: " + request.getText());
-        return requestAnalyzer.process(request) ;
+        AnalyzeResponse response = new AnalyzeResponse();
+        requestAnalyzer.map(request, response);
+        return response;
     }
 }

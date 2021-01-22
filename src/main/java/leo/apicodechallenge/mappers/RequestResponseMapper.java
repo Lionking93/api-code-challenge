@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leo.apicodechallenge.businesslogic;
+package leo.apicodechallenge.mappers;
 
 /**
  *
  * @author Omistaja
- * @param <T>
- * @param <R>
+ * @param <T1>
+ * @param <T2>
  */
-public interface Analyzer<T, R> {
-    public R process(T data);
+public interface RequestResponseMapper<T1, T2> {
+    public void map(T1 requestObject, T2 responseObject);
 }
